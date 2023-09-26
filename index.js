@@ -63,7 +63,6 @@ toggle.addEventListener("change", () => {
     cipherText = userText.value;
     output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 
-    
 })
 
 // driver function to process the user input
