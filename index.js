@@ -33,13 +33,28 @@ incrementSlider.oninput = () => {
     increment = Number(incrementSlider.value);
 }
 
+// toggle
+let encrypted = false;
+const toggle = document.getElementById("switchValue")
+
+// establish whether toggle is set to encrypt or decrypt
+toggle.addEventListener("change", () => {
+    if (!encrypted) {
+        encrypted = true;
+    } else if (encrypted) {
+        encrypted = false;
+    }
+    console.log(encrypted)
+})
 
 
+
+// event listener to grab input and process it
 
 userText.addEventListener("input", () => {
 
     cipherText = userText.value;
-    let processedText = cipher.encrypt(cipherText, shift, increment, false)
+    let processedText = cipher.encrypt(cipherText, shift, increment, encrypted)
     
 
 

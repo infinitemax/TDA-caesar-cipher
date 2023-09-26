@@ -33,7 +33,7 @@ class Cipher {
 
         // note use of modulus to wrap through alphabet
         if (isEncoded) {
-            return alphabet[(alphabet.indexOf(letter) - shift) % 26];
+            return alphabet[(alphabet.indexOf(letter) + (26 - shift)) % 26];
         } else {
             return alphabet[(alphabet.indexOf(letter) + shift) % 26];
         }
@@ -63,19 +63,17 @@ class Cipher {
                 encryptedMessage += letter;
             } else if (this.isUpperCase(letter)) {
                 // transform uppercase
-                let item = this.transformLetter(letter.toLowerCase(), shift)
+                let item = this.transformLetter(letter.toLowerCase(), shift, isEncoded)
                 
                 encryptedMessage += item.toUpperCase();
             } else {
                 // transform lowercase
                 
-                encryptedMessage += this.transformLetter(letter, shift);
+                encryptedMessage += this.transformLetter(letter, shift, isEncoded);
             }
-            if (isEncoded) {
-                shift -= increment;
-            } else {
+          
                 shift += increment;
-            }
+            
         })
 
         return encryptedMessage;
