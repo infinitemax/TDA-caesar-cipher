@@ -21,6 +21,9 @@ shiftSlider.oninput = () => {
     shiftDisplay.innerHTML = shiftSlider.value;
     shift = Number(shiftSlider.value);
 
+    // update the output as the slider is altered
+    cipherText = userText.value;
+    output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 }
 
 // increment
@@ -31,32 +34,49 @@ let incrementDisplay = document.getElementById("incrementDisplay")
 incrementSlider.oninput = () => {
     incrementDisplay.innerHTML = incrementSlider.value;
     increment = Number(incrementSlider.value);
+
+    // update the output as the slider is altered
+    cipherText = userText.value;
+    output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 }
 
 // toggle
 let encrypted = false;
 const toggle = document.getElementById("switchValue")
+const encryptLabel = document.getElementById("encryptLabel");
+const decryptLabel = document.getElementById("decryptLabel");
 
 // establish whether toggle is set to encrypt or decrypt
 toggle.addEventListener("change", () => {
     if (!encrypted) {
         encrypted = true;
+        decryptLabel.classList.add("toggleLabel");
+        encryptLabel.classList.remove("toggleLabel");
     } else if (encrypted) {
         encrypted = false;
+        encryptLabel.classList.add("toggleLabel");
+        decryptLabel.classList.remove("toggleLabel");
+        
     }
-    console.log(encrypted)
+    
 })
 
-
+// driver function to process the user input
+const processInput = (words, shift, increment, isEncoded) => {
+    return cipher.encrypt(words, shift, increment, isEncoded)
+}
 
 // event listener to grab input and process it
-
 userText.addEventListener("input", () => {
 
     cipherText = userText.value;
-    let processedText = cipher.encrypt(cipherText, shift, increment, encrypted)
-    
-
-
-    output.innerHTML = processedText;
+    output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 })
+
+
+// event listeners for sliders and toggles, to change code dynamically.
+
+// incrementSlider.addEventListener("change", () => {
+//     cipherText = userText.value;
+//     output.innerHTML = processInput(cipherText, shift, increment, encrypted);
+// })
