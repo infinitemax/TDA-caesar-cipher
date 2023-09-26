@@ -52,12 +52,17 @@ toggle.addEventListener("change", () => {
         encrypted = true;
         decryptLabel.classList.add("toggleLabel");
         encryptLabel.classList.remove("toggleLabel");
+        
     } else if (encrypted) {
         encrypted = false;
         encryptLabel.classList.add("toggleLabel");
         decryptLabel.classList.remove("toggleLabel");
         
     }
+    // update the output as the toggle is altered
+    cipherText = userText.value;
+    output.innerHTML = processInput(cipherText, shift, increment, encrypted);
+
     
 })
 
@@ -73,10 +78,3 @@ userText.addEventListener("input", () => {
     output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 })
 
-
-// event listeners for sliders and toggles, to change code dynamically.
-
-// incrementSlider.addEventListener("change", () => {
-//     cipherText = userText.value;
-//     output.innerHTML = processInput(cipherText, shift, increment, encrypted);
-// })
