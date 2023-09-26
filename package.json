@@ -1,0 +1,17 @@
+{
+  "name": "tda-caesar-cipher",
+  "version": "1.0.0",
+  "description": "A browser-based Caesar cipher - an assignment from The Developer Academy",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  }
+}
