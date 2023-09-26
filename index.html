@@ -9,27 +9,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 h-[100vh] text-yellow-100 ">
+<body class="bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 min-h-[100vh] text-yellow-100 ">
     <div id="cipherBody" class="grid grid-cols-1 justify-items-center ">
         <div class="max-w-[450px]">
             <h1 class="mt-12 text-center text-6xl">CEASAR CIPHER</h1>
             <div class="mt-8">
-                <label for="message" class="text-2xl">MESSAGE</label>
+                <label for="message" class="text-2xl">YOUR MESSAGE</label>
                 <br>
                 <textarea id="userText"
                     class="w-full border-2 border-yellow-100 bg-yellow-100 bg-opacity-20 rounded-lg focus:border-green mt-4 py-4 px-8 text-2xl text-center"></textarea>
             </div>
             <div class="shiftControls mt-8">
-                <div class="sliderContainer grid grid-cols-2">
-                    <div class="sliderContainer">
-                        <input type="range" min="0" max="26" value="0" class="shiftSlider" id="shift">
-                        <p>Shift: <span id="shiftDisplay">0</span></p>
+                <div class=" grid grid-cols-2 gap-4">
+                    <div class="sliderContainer grid justify-items-center">
+                        <input type="range" min="0" max="26" value="0" class="controlSlider w-[80%]" id="shift">
+                        <p class="text-xl">Shift: <span id="shiftDisplay">0</span></p>
                     </div>
-                    <div class="sliderContainer">
-                        <input type="range" min="0" max="26" value="0" class="incrementSlider" id="increment">
-                        <p>Increment: <span id="incrementDisplay">0</span></p>
+                    <div class="sliderContainer grid justify-items-center">
+                        <input type="range" min="0" max="26" value="0" class="controlSlider w-[80%]" id="increment">
+                        <p class="text-xl">Increment: <span id="incrementDisplay">0</span></p>
                     </div>
-                    <div class="toggleContainer w-full col-span-2 grid grid-cols-3 justify-items-center mt-8">
+                    <div class="toggleContainer w-full col-span-2 grid grid-cols-3 justify-items-center mt-8 text-2xl">
                         <p>Encrypt</p>
                         <label class="switch">
                             <input type="checkbox" id="switchValue">
@@ -41,7 +41,10 @@
             </div>
             <div class="mt-12 text-2xl max-w-[500px]">
                 <p>YOUR CODE</p>
-                <p id="output" class="break-all"></p>
+                <div
+                    class="w-full border-2 border-yellow-100 bg-yellow-100 bg-opacity-20 rounded-lg focus:border-green mt-4 py-4 px-8 text-2xl text-center min-h-[120px]">
+                <p id="output"></p>
+            </div>
             </div>
         </div>
     </div>

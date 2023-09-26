@@ -21,6 +21,9 @@ shiftSlider.oninput = () => {
     shiftDisplay.innerHTML = shiftSlider.value;
     shift = Number(shiftSlider.value);
 
+    // update the output as the slider is altered
+    cipherText = userText.value;
+    output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 }
 
 // increment
@@ -31,6 +34,10 @@ let incrementDisplay = document.getElementById("incrementDisplay")
 incrementSlider.oninput = () => {
     incrementDisplay.innerHTML = incrementSlider.value;
     increment = Number(incrementSlider.value);
+
+    // update the output as the slider is altered
+    cipherText = userText.value;
+    output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 }
 
 // toggle
@@ -47,16 +54,22 @@ toggle.addEventListener("change", () => {
     console.log(encrypted)
 })
 
-
+// driver function to process the user input
+const processInput = (words, shift, increment, isEncoded) => {
+    return cipher.encrypt(words, shift, increment, isEncoded)
+}
 
 // event listener to grab input and process it
-
 userText.addEventListener("input", () => {
 
     cipherText = userText.value;
-    let processedText = cipher.encrypt(cipherText, shift, increment, encrypted)
-    
-
-
-    output.innerHTML = processedText;
+    output.innerHTML = processInput(cipherText, shift, increment, encrypted);
 })
+
+
+// event listeners for sliders and toggles, to change code dynamically.
+
+// incrementSlider.addEventListener("change", () => {
+//     cipherText = userText.value;
+//     output.innerHTML = processInput(cipherText, shift, increment, encrypted);
+// })
