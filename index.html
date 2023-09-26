@@ -16,17 +16,26 @@
             <div class="mt-8">
                 <label for="message" class="text-2xl">MESSAGE</label>
                 <br>
-                <textarea id="userText" class="w-full border-2 border-yellow-100 bg-yellow-100 bg-opacity-20 rounded-lg focus:border-green mt-4 py-4 px-8 text-2xl text-center"></textarea>
+                <textarea id="userText"
+                    class="w-full border-2 border-yellow-100 bg-yellow-100 bg-opacity-20 rounded-lg focus:border-green mt-4 py-4 px-8 text-2xl text-center"></textarea>
             </div>
-            <div class="shiftControls">
+            <div class="shiftControls mt-8">
                 <div class="sliderContainer grid grid-cols-2">
                     <div class="sliderContainer">
-                        <input type="range" min="0" max="26" value="0" class="slider" id="shift">
+                        <input type="range" min="0" max="26" value="0" class="shiftSlider" id="shift">
                         <p>Shift: <span id="shiftDisplay">0</span></p>
                     </div>
                     <div class="sliderContainer">
-                        <input type="range" min="0" max="26" value="0" class="slider" id="increment">
+                        <input type="range" min="0" max="26" value="0" class="incrementSlider" id="increment">
                         <p>Increment: <span id="incrementDisplay">0</span></p>
+                    </div>
+                    <div class="toggleContainer w-full col-span-2 grid grid-cols-3 justify-items-center mt-8">
+                        <p>Encrypt</p>
+                        <label class="switch">
+                            <input type="checkbox" id="switchValue">
+                            <span class="slider round"></span>
+                        </label>
+                        <p>Decrypt</p>
                     </div>
                 </div>
             </div>
