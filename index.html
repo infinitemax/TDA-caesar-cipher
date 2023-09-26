@@ -29,13 +29,13 @@
                         <input type="range" min="0" max="26" value="0" class="controlSlider w-[80%]" id="increment">
                         <p class="text-xl">Increment: <span id="incrementDisplay">0</span></p>
                     </div>
-                    <div class="toggleContainer w-full col-span-2 grid grid-cols-3 justify-items-center mt-8 text-2xl">
-                        <p>Encrypt</p>
+                    <div class="toggleContainer w-full col-span-2 grid grid-cols-3 justify-items-center mt-2 text-2xl">
+                        <p class="toggleLabel" id="encryptLabel">Encrypt</p>
                         <label class="switch">
                             <input type="checkbox" id="switchValue">
-                            <span class="slider round"></span>
+                            <span class="toggle round"></span>
                         </label>
-                        <p>Decrypt</p>
+                        <p id="decryptLabel">Decrypt</p>
                     </div>
                 </div>
             </div>

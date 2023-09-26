@@ -43,15 +43,22 @@ incrementSlider.oninput = () => {
 // toggle
 let encrypted = false;
 const toggle = document.getElementById("switchValue")
+const encryptLabel = document.getElementById("encryptLabel");
+const decryptLabel = document.getElementById("decryptLabel");
 
 // establish whether toggle is set to encrypt or decrypt
 toggle.addEventListener("change", () => {
     if (!encrypted) {
         encrypted = true;
+        decryptLabel.classList.add("toggleLabel");
+        encryptLabel.classList.remove("toggleLabel");
     } else if (encrypted) {
         encrypted = false;
+        encryptLabel.classList.add("toggleLabel");
+        decryptLabel.classList.remove("toggleLabel");
+        
     }
-    console.log(encrypted)
+    
 })
 
 // driver function to process the user input
