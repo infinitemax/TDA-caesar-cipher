@@ -9,16 +9,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <div id="cipherBody">
-        <div>
-            <label for="message">Message:</label>
-            <br>
-            <textarea id="userText"></textarea>
-        </div>
-        <div>
-            <p>Code:</p>
-            <p id="output"></p>
+<body class="bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 h-[100vh] text-yellow-100 ">
+    <div id="cipherBody" class="grid grid-cols-1 justify-items-center ">
+        <div class="max-w-[450px]">
+            <h1 class="mt-12 text-center text-6xl">CEASAR CIPHER</h1>
+            <div class="mt-8">
+                <label for="message" class="text-2xl">MESSAGE</label>
+                <br>
+                <textarea id="userText" class="w-full border-2 border-yellow-100 bg-yellow-100 bg-opacity-20 rounded-lg focus:border-green mt-4 py-4 px-8 text-2xl text-center"></textarea>
+            </div>
+            <div class="shiftControls">
+                <div class="sliderContainer grid grid-cols-2">
+                    <div class="sliderContainer">
+                        <input type="range" min="0" max="26" value="0" class="slider" id="shift">
+                        <p>Shift: <span id="shiftDisplay">0</span></p>
+                    </div>
+                    <div class="sliderContainer">
+                        <input type="range" min="0" max="26" value="0" class="slider" id="increment">
+                        <p>Increment: <span id="incrementDisplay">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-2xl max-w-[500px]">
+                <p>YOUR CODE</p>
+                <p id="output" class="break-all"></p>
+            </div>
         </div>
     </div>
 
