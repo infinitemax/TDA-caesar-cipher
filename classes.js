@@ -21,6 +21,7 @@ class Cipher {
 
     transformLetter(letter, shift, isEncoded) {
         // method to change individual letter
+
         const alphabet = [
             'a', 'b', 'c', 'd', 'e', 
             'f', 'g', 'h', 'i', 'j', 
@@ -38,7 +39,7 @@ class Cipher {
         }
     }
 
-    encrypt(message = this.message, shift = this.shift, increment = this.increment, isEncoded = this.isEncoded) {
+    encrypt(message, shift, increment, isEncoded) {
 
         // move these validation steps into getter and setter methods
         // overall encrypt method

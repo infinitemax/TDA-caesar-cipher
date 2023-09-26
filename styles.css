@@ -1,0 +1,7 @@
+::-webkit-resizer {
+    display: none;
+  }
+
+textarea:focus {
+    outline: none;
+}
