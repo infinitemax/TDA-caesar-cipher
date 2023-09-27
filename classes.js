@@ -33,13 +33,12 @@ class Cipher {
 
         // note use of modulus to wrap through alphabet
         if (isEncoded) {
-            console.log(`letter is ${letter}`)
-            console.log(`shift is ${shift}`)
+        
 
             // calculate necessary index where shift is reduced
 
             let index = (alphabet.indexOf(letter) + (26 - (shift))) % 26
-            console.log(`index is ${index}`)
+    
 
             if (index < 0) {
                 index = (26 + index) % 26;
